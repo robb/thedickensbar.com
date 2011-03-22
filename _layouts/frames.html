@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Put a Dickens Bar on top of it!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="/css/default.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var currentQuote = 0
+					, Quotes       = ['#LastChristmas',
+				                    '#BestOfTimes',
+														'#WorstOfTimes'];
+
+				var next = function() {
+					var quote = Quotes[currentQuote++];
+					currentQuote %= Quotes.length;
+					
+					$('.text').text(quote);
+					animate();
+				};
+
+				$('#bar').bind('click', function(event) {
+					event.preventDefault();
+					next();
+				});
+
+				var animate = function() {
+					$('#overlay').css({
+						top: '0px',
+						opacity: 1
+					})
+					.animate({
+						top: '60px',
+						opacity: 0.5
+					}, 50)
+					.delay(50)
+					.animate({
+						opacity: 0						
+					}, 50);
+				}
+
+				var loop = function() {
+					next();
+					setTimeout(loop, 2500);
+				}
+
+				loop();
+			});
+		</script>
+	</head>
+	<body>
+		<a href="#" id="bar">
+			<div class="icon">
+				★
+			</div>			
+			<div class="text">
+				Hmm
+			</div>
+		</a>
+		<div id="overlay">
+			
+		</div>
+		<hr id="seperator" />
+		<iframe id="iframe">
+		
+		</iframe>
+	</body>
+</html>
