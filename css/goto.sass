@@ -1,0 +1,120 @@
+$bar-height: 120px
+
+*
+  margin:  0
+  padding: 0
+
+body
+  font-family: HelveticaNeue, Helvetica, Arial, sans
+  overflow:    hidden
+
+#wrapper
+  display: absolute
+  width:  100%
+  height: 100%
+
+#bar
+  display: block
+
+  text-select: none
+  text-decoration: none
+  height:  $bar-height
+
+  background:  grey
+
+  overflow:    hidden
+
+  border: 2px solid #333
+
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, rgb(91,91,91)), color-stop(1, rgb(65,65,65)), color-stop(0.56, rgb(95,95,95)), color-stop(0, rgb(53,54,56)))
+  background-image: -moz-linear-gradient(center bottom, rgb(91,91,91) 1%, rgb(65,65,65) 100%, rgb(95,95,95) 56%, rgb(53,54,56) 0%)
+
+  .icon, .text
+    line-height: $bar-height
+    color:       white
+    font-size:   $bar-height / 2
+    font-weight: bold
+
+    -moz-text-shadow:    0px 1px 0px black, 0px 2px 0px black, 0px 3px 0px black
+    -webkit-text-shadow: 0px 1px 0px black, 0px 2px 0px black, 0px 3px 0px black
+    text-shadow:         0px 1px 0px black, 0px 2px 0px black, 0px 3px 0px black
+
+  .icon
+    float: left
+    display:      block
+    height:       inherit
+    width:        $bar-height
+    text-align:   center
+    border-right: 4px groove rgba(136, 136, 136, 0.5)
+
+  .text
+    display:      inline
+    padding-left: 25px
+  
+  .promoted
+    $height = $bar-height / 2.5
+    height: $height
+    
+    padding: 0 35px
+  
+    line-height: $height
+    font-size:   $bar-height / 4
+    font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans
+    font-weight: lighter
+
+    margin-top:   ($bar-height - $height) / 2
+    margin-right: 25px
+
+    float: right
+
+    color:               #6e4d2c    
+    -moz-text-shadow:    0px 1px 0px rgba(255, 255, 255, 0.5), 0px -1px rgba(0, 0, 0, 0.5)
+    -webkit-text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5), 0px -1px rgba(0, 0, 0, 0.5)
+    text-shadow:         0px 1px 0px rgba(255, 255, 255, 0.5), 0px -1px rgba(0, 0, 0, 0.5)
+    
+    border-radius: $bar-height / 11
+    
+    background: yellow
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgb(255,217,136)), color-stop(0.72, rgb(253,254,167)))
+    background-image: -moz-linear-gradient(center bottom, rgb(255,217,136) 50%, rgb(253,254,167) 72%)
+
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5)
+
+#overlay
+  display:  block
+  position: absolute
+  top:      0
+  left:     0
+  right:    0
+  height:   60px
+
+  background: rgba(0, 0, 0, 0.5)
+
+#seperator
+  position:      absolute
+  top:           $bar-height / 2
+  border-top:    3px groove rgba(136, 136, 136, 0.5)
+  border-right:  none
+  border-bottom: none
+  border-left:   none
+
+  width: 100%
+  height: 1px
+
+#iframe-container
+  position: absolute
+  top:      $bar-height + 4px
+  bottom:   0px
+  left:     0px
+  right:    0px
+
+  width:    auto
+  height:   auto
+
+  overflor: hidden
+
+  iframe
+    width:  100%
+    height: 100%
+
+    border:   none
