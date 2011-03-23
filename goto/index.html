@@ -73,11 +73,12 @@
 					
 					target = unescape(target);
 					
-					if (! /^https?:\/\//i.test(target)) {
+					if (target && !/^https?:\/\//i.test(target)) {
 						target = "http://"  + target;
 					}
 					
-					$('iframe').attr('src', target);
+					if (target && target.length)
+						$('iframe').attr('src', target);
 				}
 			});
 		</script>
