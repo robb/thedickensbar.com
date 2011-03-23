@@ -14,7 +14,7 @@ Instead of ruining pages with the topics from the masses, why not spruce them up
 
 <form id="input-form" action="goto" method="GET">
 	<input class="url" type="text" name="url" placeholder="http://…"/>
-	<input class="button" type="submit" />
+	<input class="button" value="Go" type="submit" />
 </form>
 
 The Life and Adventures of [Dickolas Dicklebar][dickbar]
