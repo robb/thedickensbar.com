@@ -7,20 +7,28 @@
 		<script>
 			$(function() {
 				var currentQuote = 0
-					, Quotes       = ['#LastChristmas',
-				                    '#BestOfTimes',
-														'#WorstOfTimes'];
+					, Quotes       = [{text: "#mayihavesomemore",					source: "Oliver Twist"},
+														{text: "#bestoftimes",								source: "Tale of Two Cities"},
+														{text: "#worstoftimes",							source: "Tale of Two Cities"},
+														{text: "Mr Wilkins Micawber",				source: "David Copperfield"},
+														{text: "#christmaspast",							source: "Christmas Carol"},
+														{text: "Fezziwig",										source: "Christmas Carol"},
+														{text: "#jilted",										source: "Great Expectations"},
+														{text: "Nicholas Nickleby",					source: "Nicholas Nickleby"},
+														{text: "Bah, humbug!",								source: "Christmas Carol",    promoted: true},
+														{text: "Blunderstone Rookery",				source: "David Copperfield"},
+														{text: "Young Wackford Squeers",			source: "Nicholas Nickleby"},
+														{text: "Pumblechook",								source: "Great Expectations"}];
 
 				var next = function() {
 					var quote = Quotes[currentQuote++];
 					currentQuote %= Quotes.length;
 					
-					$('.text').text(quote);
+					$('.text').text(quote.text);
 					animate();
 				};
 
 				$('#bar').bind('click', function(event) {
-					event.preventDefault();
 					next();
 				});
 
@@ -32,7 +40,7 @@
 					.animate({
 						top: '60px',
 						opacity: 0.5
-					}, 50)
+					},50)
 					.delay(50)
 					.animate({
 						opacity: 0						
@@ -54,7 +62,7 @@
 				★
 			</div>			
 			<div class="text">
-				Hmm
+				#WorstOfTimes
 			</div>
 		</a>
 		<div id="overlay">
