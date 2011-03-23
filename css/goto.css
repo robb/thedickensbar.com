@@ -21,6 +21,8 @@ body {
   border: 2px solid #333333;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.01, #5b5b5b), color-stop(1, #414141), color-stop(0.56, #5f5f5f), color-stop(0, #353638));
   background-image: -moz-linear-gradient(center bottom, #5b5b5b 1%, #414141 100%, #5f5f5f 56%, #353638 0%); }
+  #bar img {
+    border: none; }
   #bar .icon, #bar .text {
     line-height: 120px;
     color: white;
