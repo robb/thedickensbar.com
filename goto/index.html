@@ -8,24 +8,29 @@
 		<script>
 			$(function() {
 				var currentQuote = 0
-					, Quotes       = [{text: "#mayihavesomemore",					source: "Oliver Twist"},
-														{text: "#bestoftimes",								source: "Tale of Two Cities"},
-														{text: "#worstoftimes",							source: "Tale of Two Cities"},
-														{text: "Mr Wilkins Micawber",				source: "David Copperfield"},
-														{text: "#christmaspast",							source: "Christmas Carol"},
-														{text: "Fezziwig",										source: "Christmas Carol"},
-														{text: "#jilted",										source: "Great Expectations"},
-														{text: "Nicholas Nickleby",					source: "Nicholas Nickleby"},
-														{text: "Bah, humbug!",								source: "Christmas Carol",    promoted: true},
-														{text: "Blunderstone Rookery",				source: "David Copperfield"},
-														{text: "Young Wackford Squeers",			source: "Nicholas Nickleby"},
-														{text: "Pumblechook",								source: "Great Expectations"}];
+					, Quotes       = [{text: "#mayihavesomemore",			 link:"http://www.gutenberg.org/ebooks/730",    source: "Oliver Twist"},
+														{text: "#bestoftimes",					 link:"http://www.gutenberg.org/ebooks/98",     source: "Tale of Two Cities"},
+														{text: "#worstoftimes",					 link:"http://www.gutenberg.org/ebooks/98",     source: "Tale of Two Cities"},
+														{text: "Mr Wilkins Micawber",		 link:"http://www.gutenberg.org/ebooks/766",    source: "David Copperfield"},
+														{text: "#christmaspast",				 link:"http://www.gutenberg.org/ebooks/46",     source: "Christmas Carol"},
+														{text: "Fezziwig",							 link:"http://www.gutenberg.org/ebooks/46",     source: "Christmas Carol"},
+														{text: "#jilted",								 link:"http://www.gutenberg.org/ebooks/1400", 	source: "Great Expectations"},
+														{text: "Nicholas Nickleby",			 link:"http://www.gutenberg.org/ebooks/967", 	  source: "Nicholas Nickleby"},
+														{text: "Bah, humbug!",					 link:"http://www.gutenberg.org/ebooks/46", 	  source: "Christmas Carol",    promoted: true},
+														{text: "Blunderstone Rookery",	 link:"http://www.gutenberg.org/ebooks/766", 	  source: "David Copperfield"},
+														{text: "Young Wackford Squeers", link:"http://www.gutenberg.org/ebooks/967", 	  source: "Nicholas Nickleby"},
+														{text: "Pumblechook",						 link:"http://www.gutenberg.org/ebooks/1400", 	source: "Great Expectations"}];
 
 				var next = function() {
 					var quote = Quotes[currentQuote++];
 					currentQuote %= Quotes.length;
 					
 					$('.text').text(quote.text);
+          $('#bar').attr({
+            'href':  quote.link,
+            'title': quote.source
+          });
+
 					
 					$('.promoted').css({
 						display: quote.promoted ? 'block' : 'none'
@@ -33,10 +38,6 @@
 					
 					animate();
 				};
-
-				$('#bar').bind('click', function(event) {
-					next();
-				});
 
 				var animate = function() {
 					$('#overlay').css({
@@ -52,10 +53,7 @@
 					.delay(50)
 					.animate({
 						opacity: 0						
-					}, 50)
-					.animate({
-						display: 'none'
-					}, 1);
+					}, 50);
 				}
 
 				var loop = function() {
@@ -98,9 +96,9 @@
 	</head>
 	<body>
 		<hr id="seperator" />
-		<div id="overlay">
-		</div>
-		<a href="#" id="bar">
+		<a target="_blank" href="#" id="bar">
+  		<div id="overlay">
+  		</div>
 			<span class="icon">
 				<img src="../images/dickensoutline.png">
 			</span>			
